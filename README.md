@@ -1,2 +1,4 @@
 # SortingVisualiser
+
+requires SFML library
  
