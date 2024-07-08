@@ -32,11 +32,12 @@ int main()
 	sb.loadFromSamples(samples.data(), samples.size(), 1, 44100);
 	sound.setBuffer(sb);
 	sound.setLoop(true);
-
+	
 	//Create window object and renderer object
 	sf::RenderWindow window(sf::VideoMode(width, height), "Sorting Visualiser");
 	Renderer renderer(width, height, &window, &sound);
 
+	sf::Text text;
 	//Create empty array manager
 	IntArray values(&renderer, length);
 	ArrayManager manager(values, length, &renderer);
@@ -53,7 +54,7 @@ int main()
 				sound.play();
 				switch (event.key.code)
 				{
-					case sf::Keyboard::S: 
+					case sf::Keyboard::F: 
 						std::cout << "Filling\n";
 						manager.Fill(height); 
 						break;
